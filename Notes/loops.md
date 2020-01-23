@@ -40,3 +40,18 @@ for n in range(10, 21):
 ```
 
 #### `while` loops
+
+Basic syntax of a `while` loop:
+
+```python
+while im_tired:
+  # seek caffeine
+```
+
+`while` loops continue to execute while a certain condition is truthy, and they'll end when the condition becomes falsy.
+
+```python
+user_response = None
+while user_reponse.lower() != 'please':
+  user_response = input('Ah ah ah... You didn\'t say the magic word: ')
+```
