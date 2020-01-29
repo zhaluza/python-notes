@@ -148,3 +148,110 @@ list.insert(len(list), 'The actual end')
 
 print(list) # [1, 2, 'Hi!', 3, 'The end!', 4, 'The actual end']
 ```
+
+### `clear`
+
+Removes all items from a list.
+
+```python
+list = [1, 2, 3, 4]
+
+list.clear()
+print(list) # []
+```
+
+### `pop`
+
+- Remove the item at a given position in the list, and return it
+- If no index is specified, removes & returns the last item in the list
+
+```python
+list = [1, 2, 3, 4]
+list.pop() # 4
+list.pop(1) # 2
+
+print(list) # [1, 3]
+```
+
+### `remove`
+
+- Remove the first item from the list with a value of `x`
+- Throw a ValueError if the item is not found
+
+```python
+list = [1, 2, 3, 4, 4, 4]
+
+list.remove(2)
+print(list) # [1, 3, 4, 4, 4]
+
+list.remove(4)
+print.(list) # [1, 3, 4, 4]
+```
+
+### `index`
+
+Returns the index of a specified item in a list.
+
+```python
+numbers = [5, 6, 7, 8, 9]
+numbers.index(6) # 1
+numbers.index(9) # 4
+```
+
+You can also specify the starting and ending indices to search between (i.e. from x to y).
+
+```python
+numbers = [5, 5, 6, 7, 5, 8, 8, 9, 10]
+
+numbers.index(5) # 0
+numbers.index(5, 1) # 1
+numbers.index(5, 2) # 4
+
+numbers.index(8, 6, 8) # 6
+```
+
+### `count`
+
+Return the number of times a value appears in a list.
+
+```python
+numbers = [1, 2, 3, 4, 3, 2, 1, 4, 10, 2]
+
+numbers.count(2) # 3
+numbers.count(21) # 0
+numbers.count(3) # 2
+```
+
+### `reverse`
+
+Reverses the elements of a list in place (mutating the original list).
+
+```python
+list = [1, 2, 3, 4]
+
+list.reverse()
+print(list) # [4, 3, 2, 1]
+```
+
+### `sort`
+
+Sort the items of a list in place (ascending order).
+
+```python
+list = [6, 4, 1, 2, 5]
+
+list.sort()
+print(list) # [1, 2, 4, 5, 6]
+```
+
+### `join`
+
+Converts lists to strings. The connecting string (e.g. `' '`, `','`) is placed at the start of the line.
+
+```python
+words = ['Coding', 'is', 'fun!']
+' '.join(words) # 'Coding is fun!'
+
+name = ['Mr', 'Haluza']
+'. '.join(name) # 'Mr. Haluza'
+```
