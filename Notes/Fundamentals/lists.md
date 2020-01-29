@@ -255,3 +255,100 @@ words = ['Coding', 'is', 'fun!']
 name = ['Mr', 'Haluza']
 '. '.join(name) # 'Mr. Haluza'
 ```
+
+---
+
+## Slicing
+
+In Python, slicing isn't done via a regular method (i.e. `list.slice(0, 2)` doesn't work!).
+
+Instead, it uses the following syntax:
+`list[start:stop:step]`
+
+Slicing returns a **copy** of the original array. It **doesn't mutate** the original array.
+
+#### Examples
+
+**Slicing without a specified end**
+
+```python
+list = [1, 2, 3, 4]
+# Slices the list beginning from the first index
+list[1:] # [2, 3, 4]
+```
+
+If you enter a negative numer, it will start the slice from the end.
+
+```python
+list = [1, 2, 3, 4]
+
+list[-1:] # [4]
+list[-3:] # [2, 3, 4]
+```
+
+**Slicing with (exclusive) end**
+
+```python
+list = [1, 2, 3, 4]
+
+list[:2] # [1, 2]
+list[:4] # [1, 2, 3, 4]
+list[1:3] # [2, 3]
+```
+
+**Slicing with step**
+The 'step' refers to how many numbers to count at a time, e.g. count by 1, by 2... Identical to the step in `range`
+
+```python
+list = [1, 2, 3, 4, 5, 6]
+
+# Start at one, no specific end, step by two
+list[1::2] # [2, 4, 6]
+list[::2] # [1, 3, 5]
+```
+
+Stepping with **negative** numbers will **reverse** the order.
+
+```python
+list = [1, 2, 3, 4, 5, 6]
+
+list[1::-1] # [2, 1]
+list[:1:-1] # [6, 5, 4, 3]
+list[2::-1] # [3, 2, 1]
+```
+
+#### Tricks With Slices
+
+**Reversing lists and strings**
+
+```python
+string = 'This is fun!'
+string[::-1] # '!nuf si sihT'
+```
+
+**Modifying portions of lists**
+You can also choose to **replace** the value at a certain index with another value (including a list of values).
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+numbers[1:3] = ['a', 'b', 'c']
+print(numbers) # [1, 'a', 'b', 'c', 4, 5]
+```
+
+## Swapping Values
+
+You can swap values in an array by using **comma syntax**.
+
+```python
+names = ['James', 'Michelle']
+
+names[0], names[1] = names[1], names[0]
+print(names) # ['Michelle', 'James']
+```
+
+#### When do you need to swap?
+
+- Shuffling
+- Sorting
+- Lots of algorithms
