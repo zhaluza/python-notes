@@ -148,3 +148,57 @@ Use `in` and `values()` to see if a dictionary contains a value.
 "Colt" in instructor.values() # True
 "Nope!" in instructor.values() # False
 ```
+
+## Dictionary Methods
+
+#### `clear`
+
+Clears all the keys and values in a dictionary, leaving only an empty dictionary.
+
+```python
+dict = {'a': 1, 'b': 2, 'c': 3}
+dict.clear()
+dict # {}
+```
+
+#### `copy`
+
+Makes a copy of a dictionary (not a reference)
+
+```python
+dict = {'a': 1, 'b': 2, 'c': 3}
+dict_copy = dict.copy()
+dict_copy # {'a': 1, 'b': 2, 'c': 3}
+dict_copy is dict # False
+```
+
+#### `fromkeys`
+
+Creates key-value pairs from comma-separated values:
+
+```python
+{}.fromkeys('a','b') # {'a': 'b'}
+{}.fromkeys('email','unknown') # {'email': 'unknown'}
+{}.fromkeys('a',[1,2,3,4,5]) # {'a': [1, 2, 3, 4, 5]}
+```
+
+Can also be used to create default dictionaries by inputting an array of key values:
+
+```python
+{}.fromkeys(['name', 'location', 'age', 'job'], 'unknown')
+# {'name': 'unknown', 'location': 'unknown', 'age': 'unknown', 'job': 'unknown'}
+```
+
+#### `get`
+
+Retrieves a key in an object and returns None instead of a KeyError if the key doesn't exist.
+
+```python
+d = {'a': 1, 'b': 2, 'c': 3}
+d['a'] # 1
+d.get('a') #1
+d['b'] # 1
+d.get('b') #1
+d['no_key'] # KeyError
+d.get('no_key') # None
+```
