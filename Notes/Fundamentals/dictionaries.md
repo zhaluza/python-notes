@@ -202,3 +202,47 @@ d.get('b') #1
 d['no_key'] # KeyError
 d.get('no_key') # None
 ```
+
+#### `pop`
+
+Take a single argument corresponding to a key and remove that key-value pair from the dictionary. Return the value corresponding to the key that was removed.
+
+```python
+d = {'a': 1, 'b': 2, 'c': 3}
+d.pop() # TypeError: pop expected at least 1 arguments, got 0
+d.pop('a') # 1
+d # {'b': 2, 'c': 3}
+d.pop('e') # KeyError
+```
+
+#### `popitem`
+
+Removes a random key in a dictionary:
+
+```python
+d = {'a': 1, 'b': 2, 'c': 3}
+d.popitem() # ('d', 4)
+d.popitem('a') # TypeError: popitem() takes no arguments (1 given)
+```
+
+#### `update`
+
+Updates keys and values in a dictionary with another set of key-value pairs.
+
+```python
+first = {'a': 1, 'b': 2, 'c': 3}
+second = {}
+
+second.update(first)
+second # {'a': 1, 'b': 2, 'c': 3}
+
+# overwrite an existing key
+second['a'] = 'amazing'
+second # {'a': 'amazing', 'b': 2, 'c': 3}
+
+# and use update again
+second.update(first)
+
+# this overwrote the previous key-val pairs
+second # {'a': 1, 'b': 2, 'c': 3}
+```
