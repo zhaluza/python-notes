@@ -60,7 +60,7 @@ for name in names:
   print(name)
 
 # Zac
-# Flavor'
+# Flavor
 # Brett
 ```
 
@@ -81,7 +81,7 @@ x.count(3) # 3
 
 #### `index`
 
-Returns the index at which a value is found in a tuple
+Returns the index at which a value is found in a tuple.
 
 ```python
 t = (1,2,3,3,3)
@@ -93,7 +93,7 @@ t.index(3) # 2 (only the first matching index is returned)
 
 #### Slices
 
-Just like with arrays, you can **slice** lists
+Just like with arrays, you can **slice** lists.
 
 ```python
 nums = (1, 2, 3, (4, 5), 6, 7)
