@@ -1,18 +1,14 @@
 # Dictionary Comprehension
 
 ## Explanation
-
 #### Syntax
-
 ```python
 {__:__ for __ in __}
 ```
-
-- Iterates over keys by default
-- To iterate over keys and values, use `.items()`
+* Iterates over keys by default
+* To iterate over keys and values, use `.items()`
 
 #### Examples
-
 ```python
 numbers = {'first': 1, 'second': 2, 'third': 3}
 squared_numbers = {key: value ** 2 for key,value in numbers.items()}
@@ -32,7 +28,6 @@ print(combo) # {'A': '1', 'B': '2', 'C': '3'}
 ```
 
 #### Conditional Logic
-
 ```python
 num_list = [1,2,3,4]
 
