@@ -126,3 +126,19 @@ math_students = {'Tina', 'Sean', 'Geoff', 'Sharon'}
 shared_students = history_students | math_students
 shared_students # {'Tina', 'Sharon'}
 ```
+
+## Set Comprehension
+
+You can use comprehension to loop through sets just like dictionaries, but with a key difference: we're only working with a single value at a time.
+
+```python
+{x**2 for x in range(10)}
+# {0, 1, 64, 4, 36, 9, 16, 49, 81, 25}
+```
+
+However, we can also use set comprehension to **create dictionaries**:
+
+```python
+{x:x**2 for x in range(10)}
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+```
