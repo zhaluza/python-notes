@@ -76,3 +76,8 @@ full_name(first='Zac', last='Haluza') # Your name is Zac Haluza
 
 full_name(last='Haluza', first='Zac') # Your name is Zac Haluza
 ```
+
+#### Why Use Keyword Arguments?
+
+- Allows for more flexibility
+- Useful when passing a dictionary to a function and unpacking its values
