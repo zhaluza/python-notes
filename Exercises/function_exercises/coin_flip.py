@@ -1,6 +1,5 @@
 from random import random
 
-
 def flip_coin():
     # note: 'random' generates num between 0 and 1
 
