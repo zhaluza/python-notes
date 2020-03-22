@@ -81,3 +81,19 @@ full_name(last='Haluza', first='Zac') # Your name is Zac Haluza
 
 - Allows for more flexibility
 - Useful when passing a dictionary to a function and unpacking its values
+
+## Documenting Functions
+
+In Python, you can include a note at the top of a function to indicate its purpose. This is done using **triple quotes**: `""" """`
+
+You can invoke the documentation by appending `.__doc__` to the end of the function's name and calling it.
+
+```python
+def say_hello():
+  """A simple function that returns the string 'hello'"""
+  return "Hello!"
+
+say_hello.__doc__ # A simple function that returns the string 'hello'
+```
+
+You can also access the `doc` notes for common methods like `print` or `random.randint`.
