@@ -97,3 +97,28 @@ say_hello.__doc__ # A simple function that returns the string 'hello'
 ```
 
 You can also access the `doc` notes for common methods like `print` or `random.randint`.
+
+## `*args`
+
+`*args` is a special operator that we can pass to functions. It gathers the remaining arguments as a **tuple**.
+
+You can name it anything you want, as long as it starts with a `*`. (`*args` is the convention, though.)
+
+Similar to the spread operator in JavaScript, `*args` will collect any additional arguments that have been passed in. It will then store them in a **tuple** under the value `args` (or whatever follows the asterisk).
+
+```python
+def print_all_args(*args):
+  print(args)
+print_all_args(1, 2, 3, 4)
+# (1, 2, 3, 4)
+```
+
+For example, you can create a `sum_all_nums` function that takes in any number of arguments:
+
+```python
+def sum_all_nums(*args):
+  total = 0
+  for num in args:
+    total += num
+  return total
+```
