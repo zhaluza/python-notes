@@ -122,3 +122,23 @@ def sum_all_nums(*args):
     total += num
   return total
 ```
+
+## `**kwargs`
+
+Short for **keyword arguments**.
+
+`**kwargs` works similarly to `*args`, except instead of storing all args inside a tuple, it stores them inside a **dictionary**.
+
+```python
+def fav_colors(**kwargs):
+  print(kwargs)
+fav_colors(zac="red", kaylee="pink")
+# ['zac': 'red', 'kaylee': 'pink']
+
+def fav_colors_statement(**kwargs):
+  for person, color in kwargs.items():
+    print(f"{person}'s favorite color is {color}.")
+fav_colors_statement(zac="red", kaylee="pink")
+# Zac's favorite color is red.
+# Kaylee's favorite color is pink.
+```
