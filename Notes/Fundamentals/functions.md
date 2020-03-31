@@ -40,7 +40,29 @@ def flip_coin():
         return 'tails'
 ```
 
-## Default Parameters
+## Documenting Functions
+
+In Python, you can include a note at the top of a function to indicate its purpose. This is done using **triple quotes**: `""" """`
+
+You can invoke the documentation by appending `.__doc__` to the end of the function's name and calling it.
+
+```python
+def say_hello():
+  """A simple function that returns the string 'hello'"""
+  return "Hello!"
+
+say_hello.__doc__ # A simple function that returns the string 'hello'
+```
+
+You can also access the `doc` notes for common methods like `print` or `random.randint`.
+
+---
+
+## Function Parameters
+
+Python offers a few special ways to set function parameters and handle arguments.
+
+### Default Parameters
 
 If you want to make a certain parameter optional for the user to enter, you can assign it a value inside the function definition.
 
@@ -64,7 +86,7 @@ add() # 30
 - Avoids errors with incorrect parameters
 - Examples are more readable\
 
-## Keyword Arguments
+### Keyword Arguments
 
 While Python typically reads any inputted arguments according to the order the parameters are defined in the function (e.g. first argument = first parameter), you can circumvent this if you want:
 
@@ -82,23 +104,7 @@ full_name(last='Haluza', first='Zac') # Your name is Zac Haluza
 - Allows for more flexibility
 - Useful when passing a dictionary to a function and unpacking its values
 
-## Documenting Functions
-
-In Python, you can include a note at the top of a function to indicate its purpose. This is done using **triple quotes**: `""" """`
-
-You can invoke the documentation by appending `.__doc__` to the end of the function's name and calling it.
-
-```python
-def say_hello():
-  """A simple function that returns the string 'hello'"""
-  return "Hello!"
-
-say_hello.__doc__ # A simple function that returns the string 'hello'
-```
-
-You can also access the `doc` notes for common methods like `print` or `random.randint`.
-
-## `*args`
+### `*args`
 
 `*args` is a special operator that we can pass to functions. It gathers the remaining arguments as a **tuple**.
 
@@ -123,7 +129,7 @@ def sum_all_nums(*args):
   return total
 ```
 
-## `**kwargs`
+### `**kwargs`
 
 Short for **keyword arguments**.
 
@@ -141,4 +147,32 @@ def fav_colors_statement(**kwargs):
 fav_colors_statement(zac="red", kaylee="pink")
 # Zac's favorite color is red.
 # Kaylee's favorite color is pink.
+```
+
+### Parameter Ordering
+
+How you should order your parameters inside your functions:
+
+1. parameters
+2. `*args`
+3. default parameters
+4. `**kwargs`
+
+Here's how this order works in action:
+
+```python
+def display_info(a, b, *args, developer="Zac", **kwargs):
+  return [a, b, args, instructor, kwargs]
+
+print(display_info(1, 2, 3, last_name="Haluza", job="developer"))
+
+#### How the params are assigned:
+# a - 1
+# b - 2
+# args (3)
+# developer - "Zac"
+# kwargs - {"last_name": "Haluza", "job": "developer"}
+
+### Actual output:
+[1, 2, (3,), "Zac", {'last_name': 'Haluza', 'job': 'developer'}]
 ```
