@@ -176,3 +176,54 @@ print(display_info(1, 2, 3, last_name="Haluza", job="developer"))
 ### Actual output:
 [1, 2, (3,), "Zac", {'last_name': 'Haluza', 'job': 'developer'}]
 ```
+
+## Argument Unpacking
+
+### Unpacking Tuples
+
+We can use `*` as an argument to a function to unpack values.
+
+What if we want to pass a data structure filled with numbers into a function that sums up all arguments fed into it?
+
+```python
+def sum_all_nums(*args):
+  total = 0
+  for num in args:
+    total += num
+  print(total)
+```
+
+While we can't use a list (like `[1, 2, 3, 4]`), we can use a tuple — e.g. `(1, 2, 3, 4)`. To pass a tuple into this function as an argument, we should use a `*`, just like it's used in the parameter:
+
+```python
+nums = (1, 2, 3, 4, 5, 6)
+sum_all_nums(*nums)
+# 21
+```
+
+### Unpacking Dictionaries
+
+We can use `**` as an argument to unpack dictionaries.
+
+What if we have a function that takes in two arguments and a dictionary with two properties, and we want to pass the dictionary's properties in as arguments?
+
+We put `**` before the name of the dictionary when we pass it into the function.
+
+```python
+names = {'first': 'Zac', 'second': 'Anxiety'}
+def display_names(first, second):
+  print(f'{first} says hello to {second}')
+
+display_names(**)
+
+# Zac says hello to Anxiety
+```
+
+```python
+def add_and_multiply_numbers(a, b, c)
+  return a + b * c
+
+data = dict(a=1, b=2, c=3)
+
+add_and_multiply_numbers(**data) #7
+```
