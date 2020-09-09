@@ -2,8 +2,8 @@
 
 ## Lambdas
 
-A **lambda function** is like an anonymous function in JavaScript, or a function expression. _It can
-only be used once._
+A **lambda function** is like an anonymous function in JavaScript, or a function expression. If not
+saved to a variable, it can only be used once.
 
 It takes in arguments and returns something.
 
