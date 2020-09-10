@@ -81,3 +81,36 @@ sorted(users, key=lambda user: len(user['tweets']))
 #     {"username": "ali", "tweets": ["what is cake", "?", "I have never heard of this food" ]},
 # ]
 ```
+
+## Max
+
+`max` returns the largest item in an iterable (e.g. a string, array) or the largest of two or more
+arguments.
+
+```python
+max('hello world') # w
+max(1, 2, 3) #3
+```
+
+Finding the longest string in an array:
+
+```python
+names = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
+max(names, key=lambda name:len(name)) # 'Ollivander'
+```
+
+## Min
+
+`min` returns the smallest item in an iterable or the smallest of two or more arguments.
+
+```python
+min([40,32,6,5,10]) # 5
+min('hello world') # ' '
+```
+
+Finding the shortest string in an array:
+
+```python
+names = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
+min(names, key=lambda name:len(name)) # 'Tim'
+```
