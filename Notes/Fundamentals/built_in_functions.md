@@ -35,3 +35,49 @@ if you want to save space on an expression you're running only once.
 
 "Basically, use a generator expression if all you're doing is iterating once. If you want to store
 and use the generated results, then you're probably better off with a list comprehension."
+
+## Sorted
+
+`sorted` works similarly to `sort` (they both sort the elements in an iterable), but with two key
+differences.
+
+- Whereas `sorted` will sort items _in place_, `sorted` returns a new sorted list.
+- `sort` is a list method (and therefore can only sort lists); `sorted` can sort other iterables
+  besides lists.
+
+```python
+more_numbers = [6,1,8,2]
+sorted(more_numbers) # [1, 2, 6, 8]
+```
+
+Both `sort` and `sorted` can sort in reverse order:
+
+```python
+ex_list = [1,2,3,4,5]
+sorted(ex_list, reverse=True) # [5,4,3,2,1]
+```
+
+You can also use a `key` parameter to sort more specifically via a function. Lambda functions are a
+good choice for this. (Both `sort` and `sorted` have this parameter.)
+
+```python
+users = [
+    {"username": "sam", "tweets": ["I love cake", "I am cake" ], "fav_color": "red"},
+    {"username": "xan", "tweets": ["Cake is dumb" ]},
+    {"username": "ali", "tweets": ["what is cake", "?", "I have never heard of this food" ]},
+]
+
+sorted(users, key=lambda user: user['username'])
+# [
+#     {"username": "ali", "tweets": ["what is cake", "?", "I have never heard of this food" ]},
+#     {"username": "sam", "tweets": ["Cake is dumb"]},
+#     {"username": "xan", "tweets": ["I love cake", "I am cake" ], "fav_color": "red"},
+# ]
+
+sorted(users, key=lambda user: len(user['tweets']))
+# [
+#     {"username": "sam", "tweets": ["Cake is dumb"]},
+#     {"username": "xan", "tweets": ["I love cake", "I am cake" ], "fav_color": "red"},
+#     {"username": "ali", "tweets": ["what is cake", "?", "I have never heard of this food" ]},
+# ]
+```
