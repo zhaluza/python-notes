@@ -1,4 +1,4 @@
-## All
+## all
 
 Returns `True` if all elements of the iterable are truthy (or if the iterable is empty).
 
@@ -8,7 +8,7 @@ all([char for char in 'eio' if char in 'aeio']) # True
 all([num for num in [4,2,10,6,8] if num % 2 == 0]) # True
 ```
 
-## Any
+## any
 
 Returns `True` if any element of the iterable is truthy. If the iterable is empty, it returns
 `False`.
@@ -36,7 +36,7 @@ if you want to save space on an expression you're running only once.
 "Basically, use a generator expression if all you're doing is iterating once. If you want to store
 and use the generated results, then you're probably better off with a list comprehension."
 
-## Sorted
+## sorted
 
 `sorted` works similarly to `sort` (they both sort the elements in an iterable), but with two key
 differences.
@@ -82,7 +82,7 @@ sorted(users, key=lambda user: len(user['tweets']))
 # ]
 ```
 
-## Max
+## max
 
 `max` returns the largest item in an iterable (e.g. a string, array) or the largest of two or more
 arguments.
@@ -113,7 +113,7 @@ max(songs, key=lambda song: song['playcount']) # {"title": "Icarus Lives", "play
 max(songs, key=lambda song: song['playcount'])['title'] # "Icarus Lives"
 ```
 
-## Min
+## min
 
 `min` returns the smallest item in an iterable or the smallest of two or more arguments.
 
@@ -142,3 +142,37 @@ songs = [
 min(songs, key=lambda song: song['playcount']) # {"title": "I, The Destroyer", "playcount": 3}
 min(songs, key=lambda song: song['playcount'])['title'] # "I, The Destroyer"
 ```
+
+## reversed
+
+Like `sorted` and `sort`, `reversed` works similarly to `reverse`, but on other things besides
+lists.
+
+Using `reverse`
+
+```python
+nums = [1,2,3,4]
+nums.reverse() # [4,3,2,1]
+```
+
+Using `reversed` _(note: returns an iterator object - needs to be converted)_
+
+```python
+nums = [1,2,3,4]
+list(reversed(nums)) # [4,3,2,1]
+
+greeting = 'hello'
+''.join(list(reversed(greeting))) # 'olleh'
+
+# just use a slice method for this, though
+"hello"[::-1] # 'olleh'
+```
+
+You can use `reversed` to loop backwards through a given range!
+
+```python
+for x in reversed(range(0,10)):
+  # do something awesome
+```
+
+## len
