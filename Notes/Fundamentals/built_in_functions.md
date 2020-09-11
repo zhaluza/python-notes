@@ -176,3 +176,36 @@ for x in reversed(range(0,10)):
 ```
 
 ## len
+
+Method that provides the length of a string or object. Calls the element's `__len__` property behind
+the scenes.
+
+```python
+len([1,2,3,4]) #4
+```
+
+## abs
+
+Returns the absolute value of a number. Can be an integer or floating point number
+
+## sum
+
+Takes in an iterable and an optional start - returns the sum of _start_ and the items of an iterable
+from left to right.
+
+```python
+sum([1,2,3]) # 6
+sum([1,2,3], 10) # 16
+```
+
+_Note: don't use `sum` to concatenate an array of strings - use `join` instead_
+
+## round
+
+Returns a number rounded to _ndigits_ precision after the decimal point. If _ndigits_ is omitted or
+is `None`, it returns the nearest integer.
+
+```python
+round(5.2894) # 5
+round(5.2894, 3) # 5.289
+```
