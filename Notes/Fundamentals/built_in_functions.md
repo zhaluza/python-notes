@@ -99,6 +99,20 @@ names = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
 max(names, key=lambda name:len(name)) # 'Ollivander'
 ```
 
+Finding the most played song in a list:
+
+```python
+songs = [
+  {"title": "I, The Destroyer", "playcount": 3},
+  {"title": "Hysteria", "playcount": 6},
+  {"title": "Icarus Lives", "playcount": 88},
+  {"title": "Concealing Fate, Pt. 2", "playcount": 31},
+]
+
+max(songs, key=lambda song: song['playcount']) # {"title": "Icarus Lives", "playcount": 88}
+max(songs, key=lambda song: song['playcount'])['title'] # "Icarus Lives"
+```
+
 ## Min
 
 `min` returns the smallest item in an iterable or the smallest of two or more arguments.
@@ -113,4 +127,18 @@ Finding the shortest string in an array:
 ```python
 names = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
 min(names, key=lambda name:len(name)) # 'Tim'
+```
+
+Finding the least played song in a list:
+
+```python
+songs = [
+  {"title": "I, The Destroyer", "playcount": 3},
+  {"title": "Hysteria", "playcount": 6},
+  {"title": "Icarus Lives", "playcount": 88},
+  {"title": "Concealing Fate, Pt. 2", "playcount": 31},
+]
+
+min(songs, key=lambda song: song['playcount']) # {"title": "I, The Destroyer", "playcount": 3}
+min(songs, key=lambda song: song['playcount'])['title'] # "I, The Destroyer"
 ```
