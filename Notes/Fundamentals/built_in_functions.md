@@ -209,3 +209,52 @@ is `None`, it returns the nearest integer.
 round(5.2894) # 5
 round(5.2894, 3) # 5.289
 ```
+
+## zip
+
+Makes an iterator that aggregates elements from each of the iterables. Returns an iterator of
+tuples, where the 1st tuple is an aggregate of all the 1st elements, the 2nd tuple is an aggregate
+from all the 2nd elements, etc.
+
+It stops when the shortest input iterable is exhausted.
+
+```python
+first_zip = zip([1,2,3], [4,5,6])
+list(first_zip) # [(1,4), (2, 5), (3, 6)]
+dict(first_zip) # {1: 4, 2: 5, 3: 6}
+```
+
+You can also "unzip" iterators by using the `*` operator.
+
+```python
+five_by_two = [(0,1), (1,2), (2,3), (3,4), (4,5)]
+list(zip(*five_by_two)) # [(0,1,2,3,4), (1,2,3,4,5)]
+```
+
+### More complex `zip` examples
+
+Use `zip` and `max` to find the highest value corresponding to a certain index (mapped to an
+individual).
+
+```python
+midterms = [80, 91, 78]
+finals = [98, 89, 53]
+students = ['Dan', 'Ang', 'Kate']
+
+final_grades = {tup[0]:max(tup[1], tup[2]) for tup in zip(students, midterms, final)}
+print(final_grades) # {'Dan': 98, 'Ang': 91, 'Kate': 78}
+```
+
+You can also get the same result by implementing `map` inside the `zip` function:
+
+```python
+scores = zip(
+  students,
+  map(
+    lambda pair: max(pair),
+    zip(midterms, finals)
+  )
+)
+
+print(dict(scores)) # {'Dan': 98, 'Ang': 91, 'Kate': 78}
+```
