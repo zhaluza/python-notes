@@ -1,19 +1,20 @@
 from pyfiglet import figlet_format
 from termcolor import colored
 
+def print_ascii_art(msg, color): 
+    msg = figlet_format(msg)
+
+    valid_colors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
+    if color == 'gray':
+        color = 'grey'
+    if(color not in valid_colors):
+        color = 'green'
+
+    print(colored(msg, color=color))
+
 # Gather user input
-print('What message do you want to print?')
-message = input()
-print('What color?')
-user_color = input()
+message = input('What message do you want to print?')
+user_color = input('What color?')
 
-# Process user input 
-message = pyfiglet.figlet_format(message)
-
-termcolors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
-if user_color == 'gray':
-    user_color = 'grey'
-if(user_color not in termcolors):
-    user_color = 'green'
-
-print(colored(message, color=user_color))
+# Process user input
+print_ascii_art(message, user_color)
